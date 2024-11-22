@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Libros</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Catálogo de Libros</h1>
+
+        <!-- Formulario para agregar libros -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold mb-4">Agregar Libro</h2>
+            <form id="formLibro" class="space-y-4">
+                <div>
+                    <label for="isbn" class="block text-lg font-medium text-gray-700">ISBN</label>
+                    <input type="number" id="isbn" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div>
+                    <label for="titulo" class="block text-lg font-medium text-gray-700">Título</label>
+                    <input type="text" id="titulo" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div>
+                    <label for="autor" class="block text-lg font-medium text-gray-700">Autor</label>
+                    <input type="text" id="autor" class="w-full p-2 border border-gray-300 rounded-md" required>
+                </div>
+                <div>
+                    <label for="descripcion" class="block text-lg font-medium text-gray-700">Descripción</label>
+                    <textarea id="descripcion" class="w-full p-2 border border-gray-300 rounded-md" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Agregar</button>
+            </form>
+        </div>
+
+        <!-- Opciones de búsqueda -->
+        <div class="bg-white p-6 rounded-lg shadow-md mt-8">
+            <h2 class="text-2xl font-semibold mb-4">Buscar Libro</h2>
+            <div>
+                <label for="isbnBuscar" class="block text-lg font-medium text-gray-700">ISBN</label>
+                <input type="number" id="isbnBuscar" class="w-full p-2 border border-gray-300 rounded-md">
+            </div>
+            <button id="buscarLibro" class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Buscar</button>
+        </div>
+
+        <!-- Formulario para eliminar libros -->
+        <div class="bg-white p-6 rounded-lg shadow-md mt-8">
+            <h2 class="text-2xl font-semibold mb-4">Eliminar Libro</h2>
+            <div>
+                <label for="isbnEliminar" class="block text-lg font-medium text-gray-700">ISBN</label>
+                <input type="number" id="isbnEliminar" class="w-full p-2 border border-gray-300 rounded-md">
+            </div>
+            <button id="eliminarLibro" class="mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">Eliminar</button>
+        </div>
+
+        <!-- Opciones de gestión -->
+        <div class="mt-8 space-y-4">
+            <button id="mostrarCatalogo" class="w-full px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700">
+                Mostrar Catálogo Ordenado
+            </button>
+        </div>
+
+        <!-- Resultados -->
+        <h2 class="text-2xl font-semibold mt-8">Resultados</h2>
+        <ul id="resultadoCatalogo" class="bg-white p-4 rounded-lg shadow-md"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
